@@ -62,7 +62,7 @@ public class AdminController {
             String jwt = jwtUtils.generateToken(user.getUsername());
             return new ResponseEntity<>(jwt, HttpStatus.OK);
         } catch (Exception e) {
-            log.error("Exception occurred while createAuthenticationToken ", e);
+            log.error("Exception occurred while createAuthenticationToken ", e.getMessage ());
             return new ResponseEntity<>("Incorrect username or password", HttpStatus.BAD_REQUEST);
         }
     }
